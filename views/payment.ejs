@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito:wght@300&display=swap"
+      rel="stylesheet"
+    />
+
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+
+    <title>spark donation</title>
+  </head>
+  <body>
+    <header>
+      <img class="logo" src="/spark.png" alt="logo" />
+      <h3 class="head">Sparks donation</h3>
+      <nav>
+        <div class="container">
+          <ul class="links">
+            <li>
+              <a href="https://www.thesparksfoundationsingapore.org/">Home</a>
+            </li>
+
+            <li>
+              <a
+                href="https://www.thesparksfoundationsingapore.org/programs/student-scholarship-program/"
+                >Programs</a
+              >
+            </li>
+            <li>
+              <a href="https://www.thesparksfoundationsingapore.org/contact-us/"
+                >Contact Us
+              </a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+
+    <div class="maincont">
+      <div class="form-body">
+        <form class="form-group" action="/order" method="post">
+          <div class="form-group">
+            <label for="">Name: </label>
+            <input class="form-control" type="text" name="name" value="" />
+          </div>
+          <div class="form-group">
+            <label for="">Email: </label>
+            <input class="form-control" type="text" name="email" value="" />
+          </div>
+          <div class="form-group">
+            <label for="">Phone: </label>
+            <input class="form-control" type="text" name="phone" value="" />
+          </div>
+
+          <div class="form-group">
+            <button id="rzp-button1">Donate</button>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="lower-div">
+      <div class="div1">
+        <img class="pic1" src="/pic1.png" />
+        <p class="para">
+          We aim to collaborate, and help students through our programmes to
+          inspire and integrate them, using innovative ways. We believe children
+          are gifts of god and any service to them is service to god. We are
+          committed to providing everyone and opportunity to learn, grow and
+          help others grow.We actively seek to partner with organizations with
+          similar goals, individuals, and corporates to enhance the
+          effectiveness of our programs and advance common interests..
+        </p>
+      </div>
+      <div class="div2">
+        <img class="pic2" src="/pic2.png" />
+        <p class="para">
+          We treat all with respect, dignity and honesty. We show respect by
+          listening to and seeking to understand different points of views,
+          being sensitive to cultural and religious diversity, and by working
+          collaboratively with others to achieve common goals and a harmonious
+          work culture.We constantly seek opportunities and innovative ways to
+          create value through the work that we do to further our mission.
+        </p>
+      </div>
+    </div>
+    <footer>
+      <div class="foot">
+        <img
+          class="icon"
+          src="https://img.icons8.com/color/96/000000/facebook-new.png"
+        />
+        <img
+          class="icon"
+          src="https://img.icons8.com/clouds/150/000000/instagram-new--v2.png"
+        />
+        <img
+          class="icon"
+          src="https://img.icons8.com/color/96/000000/whatsapp--v6.png"
+        />
+      </div>
+
+      <h3>&copy; copyright Deepank Joshi</h3>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+
+    <script>
+      axios.post("/order").then((info) => {
+        console.log(info);
+
+        var options = {
+          key: "rzp_test_kdtuY3iNHf6UL3",
+          amount: 1500,
+
+          currency: "INR",
+          name: "Acme Corp",
+          description: "Test Transaction",
+          image: "https://example.com/your_logo",
+          order_id: info.data.id, //This is a sample Order ID. Pass the `id` obtained in the response of Step 1
+          callback_url: "/is-order-complete",
+
+          notes: {
+            address: "Razorpay Corporate Office",
+          },
+          theme: {
+            color: "#3399cc",
+          },
+        };
+        var rzp1 = new Razorpay(options);
+        document.getElementById("rzp-button1").onclick = function (e) {
+          rzp1.open();
+          e.preventDefault();
+        };
+      });
+    </script>
+  </body>
+</html>

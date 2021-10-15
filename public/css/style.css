@@ -1,0 +1,141 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Nunito", sans-serif;
+}
+/* body { */
+/* background-image: url("/photo.jpg");
+  background-size: cover;
+
+  font-family: "Poppins", sans-serif; */
+/* } */
+header {
+  width: 100vw;
+  height: 100px;
+  background-color: rgba(64, 126, 226, 0.637);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.links li {
+  display: inline-block;
+  padding: 0px 50px;
+  font-size: 22px;
+  font-weight: 400;
+}
+.links li a {
+  color: azure;
+  text-decoration: none;
+}
+.head {
+  font-size: 37px;
+  color: aliceblue;
+}
+.maincont {
+  background-image: url("/photo.jpg");
+  background-size: cover;
+
+  font-family: "Poppins", sans-serif;
+
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+.form-body {
+  margin-top: 100px;
+  width: 500px;
+  height: 600px;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  background-color: rgba(80, 99, 129, 0.637);
+  border-radius: 20px;
+  margin-bottom: 100px;
+}
+.form-group {
+  margin: 20px 0px;
+  font-size: 20px;
+}
+.form-control {
+  padding: 6px 9px;
+  border-radius: 50px;
+  outline: none;
+  border-color: beige;
+}
+input:focus {
+  border-color: dodgerblue;
+  box-shadow: 0 0 8px 0 dodgerblue;
+}
+#rzp-button1 {
+  padding: 6px 30px;
+  border-radius: 10px;
+  background-color: white;
+  color: black;
+  border: 2px solid #f44336;
+  margin-top: 60px;
+  margin-left: 70px;
+  font-size: 20px;
+}
+#rzp-button1:hover {
+  background-color: #f44336;
+  color: white;
+}
+.lower-div {
+  margin: 80px 100px;
+  text-align: left;
+  width: 70pc;
+
+  align-items: center;
+  height: 500px;
+}
+.logo {
+  width: 90px;
+  height: 90px;
+  padding-left: 15px;
+}
+.logo {
+  cursor: pointer;
+}
+p {
+  font-size: 25px;
+}
+.div1,
+.div2 {
+  line-height: 2;
+  margin-top: 100px;
+}
+.pic1 {
+  width: 300px;
+  height: 300px;
+  float: left;
+  margin-right: 40px;
+}
+.pic2 {
+  width: 300px;
+  height: 300px;
+  float: right;
+  margin-left: 40px;
+  margin-bottom: 70px;
+}
+footer {
+  width: 100vw;
+  height: 100px;
+  display: flex;
+  background-color: rgba(64, 126, 226, 0.637);
+  align-items: center;
+  justify-content: center;
+}
+
+.icon {
+  width: 50px;
+  height: 50px;
+  margin: 9px;
+}
+h3 {
+  color: bisque;
+  font-size: 30px;
+}
+.icon:hover {
+  cursor: pointer;
+}
